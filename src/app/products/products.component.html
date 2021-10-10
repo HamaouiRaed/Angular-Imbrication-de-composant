@@ -1,0 +1,25 @@
+<div><label>Search Price</label></div>
+<div>
+    <input type="number" [(ngModel)]="maxPrice" placeholder="Search Price" aria-label="Search">
+    <div *ngFor="let p of listProdcut, let i=index">
+        <div *ngIf="p.price<=maxPrice">
+            <table class="table">
+                <tr>
+                    <td>title:{{p.title}}</td>
+                </tr>
+                <tr>
+                    <td>price:{{p.price}}</td>
+                </tr>
+                <tr>
+                    <td>quantity:{{p.quantity}}</td>
+                </tr>
+                <tr>
+                    <td>like:{{p.like}}</td>
+                </tr>
+                <button (click)="buy(i)" [disabled]="p.quantity==0">Buy</button>
+                <button (click)="like(i)">Like</button>
+
+            </table>
+        </div>
+    </div>
+</div>
