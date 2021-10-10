@@ -19,9 +19,19 @@ export class ProductsComponent implements OnInit {
     ];
     console.log(this.listProducts);
   } 
-  incrimentlike(product:Product){
+  incrementlike(product:Product){
     let i = this.listProducts.indexOf(product);
     this.listProducts[i].like++;
+   
+  }
+
+  decrementQuantity(product:Product){
+    let i = this.listProducts.indexOf(product);
+    if(this.listProducts[i].quantity>0){
+      this.listProducts[i].quantity--;
+    }
+   
+    
   }
 }
 

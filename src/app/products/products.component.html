@@ -8,6 +8,7 @@
     <app-product *ngFor="let p of listProducts;"
      [product]="p"
       [priceMaxInput]=" maxPrice"
-      (incrementEvent)="incrimentlike">
-    </app-product>
+      (incrementEvent)="incrementlike($event)"
+      (incrementEvent)="decrementQuantity($event)"></app-product>
+   
 </div>
