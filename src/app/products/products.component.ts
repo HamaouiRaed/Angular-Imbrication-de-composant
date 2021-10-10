@@ -19,5 +19,9 @@ export class ProductsComponent implements OnInit {
     ];
     console.log(this.listProducts);
   } 
+  incrimentlike(product:Product){
+    let i = this.listProducts.indexOf(product);
+    this.listProducts[i].like++;
+  }
 }
 

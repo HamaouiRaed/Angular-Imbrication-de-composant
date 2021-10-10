@@ -5,6 +5,9 @@
 </form>
 
 <div class="row">
-    <app-product *ngFor="let p of listProducts;" [product]="p" [priceMaxInput]=" maxPrice">
+    <app-product *ngFor="let p of listProducts;"
+     [product]="p"
+      [priceMaxInput]=" maxPrice"
+      (incrementEvent)="incrimentlike">
     </app-product>
 </div>

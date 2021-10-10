@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from '../models/Products';
 
 @Component({
@@ -10,6 +10,7 @@ export class ProductComponent implements OnInit {
   
   @Input() product!: Product;
   @Input() priceMaxInput!: number;
+  @Output() incrementEvent = new EventEmitter<Product>() ;
   constructor() { 
     
   }
@@ -24,5 +25,10 @@ export class ProductComponent implements OnInit {
    }
    buy(qu:number){
      this.product.quantity=this.product.quantity--;
+   }
+
+   sendNotif(){
+
+    this.incrementEvent.emit(this.product)
    }
 }
